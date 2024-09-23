@@ -14,5 +14,10 @@ function showButton(id){
     document.getElementById("history-container").classList.add('hidden');
     document.getElementById(id).classList.remove('hidden');
 } 
+
+function resetInput(id){
+  const reset=  document.getElementById(id).value = '';
+  return reset
+}
         
 

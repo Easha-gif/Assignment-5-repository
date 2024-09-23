@@ -4,7 +4,7 @@ document.getElementById("blog-btn").addEventListener('click' , function(){
 })
 
 
-document.getElementById("Donate-btn").addEventListener('click',function(){
+document.getElementById("donate-btn").addEventListener('click',function(){
     const input = parseFloat(document.getElementById("input-field").value)
     const headMoney = parseFloat(textValue("head-money"))
     const availableMoney = textValue("available-money")
@@ -12,10 +12,10 @@ document.getElementById("Donate-btn").addEventListener('click',function(){
     
    if(
     isNaN(input)===true  || input <=0 ){
-    return  alert("Please Provide a Amount of Money")
+    return alert("Please Provide a Amount of Money");
+     
    }
-   else{
-   const money =  input + availableMoney;
+   else{const money =  input + availableMoney;
   document.getElementById("available-money").innerText = money
   const update = headMoney - input
    document.getElementById("head-money").innerText = update
@@ -34,8 +34,16 @@ document.getElementById("Donate-btn").addEventListener('click',function(){
     p.classList.add('bg-slate-100','container','mx-auto','text-2xl','font-bold','mt-12','text-black','p-8','rounded-md','border-2')
  container.appendChild(p) 
  p.appendChild(h)
+ resetInput("input-field")
 
+
+ const modal = document.getElementById("my_modal_5");
+ modal.showModal()
+ 
 }})
+
+
+
 
 // donation
 document.getElementById("donate").addEventListener("click" ,function(){
@@ -70,28 +78,31 @@ document.getElementById("Donate-btn-2").addEventListener('click',function(){
     
    if(
     isNaN(input)===true  || input <=0 ){
-    return  alert("Please Provide a Amount of Money")
+    return  alert("Please provide amount of Donation Money!!")
    }
    else{
    const money =  input + availableMoney;
   document.getElementById("available-money-2").innerText = money
   const update = headMoney - input
    document.getElementById("head-money").innerText = update
-   document.getElementById("Donate-btn").classList.add = showButton("my_modal_5");
   
-   } 
+   const container= document.getElementById("history-container");
+   const p = document.createElement('p')
    const h = document.createElement('p')
    h.innerText = `Date ${new Date()}
    `
    h.classList.add('text-base',"text-gray-400")
-    const container= document.getElementById("history-container");
-    const p = document.createElement('p')
     p.innerText = `${input}Taka is ${city}`
     p.classList.add('bg-slate-100','container','mx-auto','text-2xl','font-bold','mt-12','text-black','p-8','rounded-md','border-2')
  container.appendChild(p)
  p.appendChild(h)
 
-})
+  resetInput("input-field-2")
+
+  const modal = document.getElementById("my_modal_5");
+  modal.showModal()
+   }}
+)
 
 
 // section 3
@@ -111,9 +122,10 @@ document.getElementById("Donate-btn-3").addEventListener('click',function(){
   document.getElementById("available-money-3").innerText = money
   const update = headMoney - input
    document.getElementById("head-money").innerText = update
-
    document.getElementById("Donate-btn-3").classList.add = showButton("my_modal_5");
-   } 
+  
+   
+    
    const h = document.createElement('p')
    h.innerText = `Date ${new Date()}
    `
@@ -125,4 +137,15 @@ document.getElementById("Donate-btn-3").addEventListener('click',function(){
  container.appendChild(p)
  p.appendChild(h)
 
+ resetInput("input-field-3")
+
+ const modal = document.getElementById("my_modal_5");
+ modal.showModal()
+
+}
+
+
+
 })
+
+
