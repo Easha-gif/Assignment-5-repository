@@ -12,8 +12,11 @@ document.getElementById("donate-btn").addEventListener('click',function(){
     
    if(
     isNaN(input)===true  || input <=0 ){
-    return alert("Please Provide a Amount of Money");
+    return alert("Please Provide a Amount of Money!!");
      
+   }
+   else if(input>headMoney){
+return alert("Not enough Money to Donation!!")
    }
    else{const money =  input + availableMoney;
   document.getElementById("available-money").innerText = money
@@ -72,14 +75,19 @@ document.getElementById("history-btn").addEventListener("click" ,function(){
 
 document.getElementById("Donate-btn-2").addEventListener('click',function(){
     const input = parseFloat(document.getElementById("input-field-2").value)
+    const inputMoney = document.getElementById("input-field-2").value
     const headMoney = parseFloat(textValue("head-money"))
     const availableMoney = textValue("available-money-2")
     const city = document.getElementById("feni").innerText
     
    if(
     isNaN(input)===true  || input <=0 ){
-    return  alert("Please provide amount of Donation Money!!")
+    return  alert("Please Provide a Amount of Money!!")
    }
+   else if(input>headMoney){
+    return alert("Not enough Money to Donation!!")
+    }
+
    else{
    const money =  input + availableMoney;
   document.getElementById("available-money-2").innerText = money
@@ -115,8 +123,9 @@ document.getElementById("Donate-btn-3").addEventListener('click',function(){
     
    if(
     isNaN(input)===true  || input <=0 ){
-    return  alert("Please Provide a Amount of Money")
-   }
+    return  alert("Please Provide a Amount of Money!!")
+   }else if(input>headMoney){
+    return alert("Not enough Money to Donation!!")}
    else{
    const money =  input + availableMoney;
   document.getElementById("available-money-3").innerText = money
